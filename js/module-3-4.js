@@ -1,25 +1,38 @@
-// Module 3
-function getCommonElements(array1, array2) {
-  let newArray = [];
+//Напишіть функцію logItems(array), яка приймає
+//масив та використовує цикл for, який для кожного
+//елемента масиву виводитиме повідомлення у форматі
+//<номер елемента> - <значення елемента>
+//Нумерація елементів має починатися з першого.
+//['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп']
+function logItems(array) {
+  let itemNum = 0;
+  let itemName = '';
+  let message = '';
+  for (let i = 0; i < array.length; i++) {
+    itemNum = i + 1;
+    itemName = array[i];
+    message = `${itemNum} - ${itemName}`;
+    console.log(message);
+  }
+}
+const music = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
+const result = logItems(music);
+console.log(result);
 
-  console.log('Перший масив: ', array1);
-  console.log('Другий масив: ', array2);
-  console.log('Новий масив: ', newArray);
-
-  for (let i = 0; i < array1.length; i += 1) {
-    console.log(
-      'Окреме значення з масиву з індексом "і"› на кожній ітерації : ',
-      array1[i]
-    );
-    if (array2.includes(array1[i])) {
-      console.log(
-        `Як змінюється масив на ітераціях, якщо задана умова = true, то відбувається push : [${newArray}]"+"${array1[i]}`
-      );
-      newArray.push(array1[i]);
+//Напишіть функцію calculateAverage()
+//яка приймає довільну кількість
+//аргументів і повертає їхнє середнє значення.
+//Додати перевірку, що аргументи це числа.
+function calculateAverage(...args) {
+  let sum = 0;
+  let count = 0;
+  for (const arg of args) {
+    if (typeof arg === 'number') {
+      sum += arg;
+      count += 1;
     }
   }
-  return newArray;
+  return sum / count;
 }
-console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // повертає [12, 27, 3]
-//console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // повертає [10, 30, 40]
-//console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // повертає []
+const result2 = calculateAverage();
+console.log(result2);
