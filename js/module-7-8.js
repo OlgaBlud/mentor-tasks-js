@@ -99,16 +99,50 @@ resetBtn.addEventListener('click', () => {
 
 */
 
-const swapBtn = document.querySelector('#swapButton');
+/* const swapBtn = document.querySelector('#swapButton');
 const leftInput = document.querySelector('#leftSwapInput');
 const rightInput = document.querySelector('#rightSwapInput');
 swapBtn.addEventListener('click', onSwapBtnClick);
 function onSwapBtnClick() {
   const leftInputValue = leftInput.value;
   const rightInputValue = rightInput.value;
-  (rightInput.value = leftInputValue) && (leftInput.value = rightInputValue);
-}
+  rightInput.value = leftInputValue;
+  leftInput.value = rightInputValue;
+} */
+
+// _______________________________________________________________________________________________________________
+
 /*
 Завдання 10
 Наведено список людей. Зроби можливість сортування списку на ім'я та на прізвище.
 */
+const sortByLastNameBtn = document.querySelector('#sortByLastNameButton');
+const sortByNameBtn = document.querySelector('#sortByNameButton');
+const peopleList = document.querySelector('.people');
+sortByLastNameBtn.addEventListener('click', handleSortByLastNameBtn);
+sortByNameBtn.addEventListener('click', handleSortByNameBtn);
+
+const personsNamesArr = [];
+document
+  .querySelectorAll('.person')
+  .forEach(person => personsNamesArr.push(person.innerText));
+
+const reversedPersonsNamesArr = personsNamesArr.map(person =>
+  person.split(' ').reverse().join(' ')
+);
+
+function handleSortByLastNameBtn() {
+  const sortedByLastNameArr = sortArr(reversedPersonsNamesArr);
+  peopleList.innerHTML = generateSortedPersonsList(sortedByLastNameArr);
+}
+function handleSortByNameBtn() {
+  const sortedByNameArr = sortArr(personsNamesArr);
+  peopleList.innerHTML = generateSortedPersonsList(sortedByNameArr);
+}
+
+function sortArr(arr) {
+  return arr.toSorted((str1, str2) => str1.localeCompare(str2));
+}
+function generateSortedPersonsList(arr) {
+  return arr.map(name => `<li class="person">${name}</li>`).join('');
+}
