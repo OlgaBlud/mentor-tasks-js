@@ -19,7 +19,7 @@ function onShowMeBtnClick() {
 За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
 інформацією про те, яка кнопка була натиснута скільки разів.
 */
-const refs = {
+/* const refs = {
   statList: document.querySelector('.statList'),
   resultButton: document.querySelector('#resultButton'),
   resultSection: document.querySelector('#resultSection'),
@@ -43,12 +43,48 @@ refs.resultButton.addEventListener('click', onResultBtnClick);
 function onResultBtnClick() {
   console.log(sum);
   console.log(clicksStat);
-}
+} */
 
 /*
 Завдання 9
 Видалити зі списку елементи, які позначені.
 */
+
+/* const checkboxForm = document.querySelector('.checkboxForm');
+const checkboxList = document.querySelector('.checkboxList');
+const checkboxContent = checkboxList.innerHTML;
+const resetBtn = document.querySelector('.resetBtn');
+
+let arrOfCheckedInputs = [];
+
+checkboxForm.addEventListener('change', handleOnInputsClick);
+
+function handleOnInputsClick(event) {
+  if (event.target.nodeName !== 'INPUT') {
+    return;
+  } else if (!arrOfCheckedInputs.includes(event.target.id)) {
+    arrOfCheckedInputs.push(event.target.id);
+  } else {
+    const indexToRemove = arrOfCheckedInputs.indexOf(event.target.id);
+    arrOfCheckedInputs.splice(indexToRemove, 1);
+  }
+}
+
+checkboxForm.addEventListener('click', handleOnFilterBtnClick);
+function handleOnFilterBtnClick(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  event.preventDefault();
+
+  arrOfCheckedInputs.forEach(inputId => {
+    document.querySelector(`#${inputId}`).parentElement.remove();
+  });
+  arrOfCheckedInputs = [];
+}
+resetBtn.addEventListener('click', () => {
+  checkboxList.innerHTML = checkboxContent;
+}); */
 
 /*
 Завдання 2
