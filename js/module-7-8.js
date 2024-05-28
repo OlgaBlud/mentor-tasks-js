@@ -1,7 +1,4 @@
-/*
-Завдання 1
-Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
-*/
+// Завдання 1
 
 const refs = {
   taskTitle: document.querySelector('.taskTitle'),
@@ -17,12 +14,7 @@ function onShowMeBtnClick() {
 }
 
 // Завдання 8_______________________________________________________________________________________________________________
-/*
 
-При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
-За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
-інформацією про те, яка кнопка була натиснута скільки разів.
-*/
 const references = {
   statList: document.querySelector('.statList'),
   resultButton: document.querySelector('#resultButton'),
@@ -50,10 +42,6 @@ function onResultBtnClick() {
 }
 
 // Завдання 9_______________________________________________________________________________________________________________
-
-/*
-Видалити зі списку елементи, які позначені.
-*/
 
 const checkboxForm = document.querySelector('.checkboxForm');
 const checkboxList = document.querySelector('.checkboxList');
@@ -93,11 +81,6 @@ resetBtn.addEventListener('click', () => {
 
 // Завдання 2_______________________________________________________________________________________________________________
 
-/*
-Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
-Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
-*/
-
 const swapBtn = document.querySelector('#swapButton');
 const leftInput = document.querySelector('#leftSwapInput');
 const rightInput = document.querySelector('#rightSwapInput');
@@ -111,9 +94,6 @@ function onSwapBtnClick() {
 
 // Завдання 10_______________________________________________________________________________________________________________
 
-/*
-Наведено список людей. Зроби можливість сортування списку на ім'я та на прізвище.
-*/
 const sortByLastNameBtn = document.querySelector('#sortByLastNameButton');
 const sortByNameBtn = document.querySelector('#sortByNameButton');
 const peopleList = document.querySelector('.people');
