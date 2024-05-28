@@ -2,6 +2,7 @@
 Завдання 1
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
 */
+
 /* const refs = {
   taskTitle: document.querySelector('.taskTitle'),
   btn: document.querySelector('#alertButton'),
@@ -13,6 +14,7 @@ function onShowMeBtnClick() {
   refs.taskTitle.textContent = refs.input.value;
 }
  */
+// _______________________________________________________________________________________________________________
 /*
 Завдання 8
 При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
@@ -44,6 +46,8 @@ function onResultBtnClick() {
   console.log(sum);
   console.log(clicksStat);
 } */
+
+// _______________________________________________________________________________________________________________
 
 /*
 Завдання 9
@@ -86,12 +90,24 @@ resetBtn.addEventListener('click', () => {
   checkboxList.innerHTML = checkboxContent;
 }); */
 
+// _______________________________________________________________________________________________________________
+
 /*
 Завдання 2
 Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
+
 */
 
+const swapBtn = document.querySelector('#swapButton');
+const leftInput = document.querySelector('#leftSwapInput');
+const rightInput = document.querySelector('#rightSwapInput');
+swapBtn.addEventListener('click', onSwapBtnClick);
+function onSwapBtnClick() {
+  const leftInputValue = leftInput.value;
+  const rightInputValue = rightInput.value;
+  (rightInput.value = leftInputValue) && (leftInput.value = rightInputValue);
+}
 /*
 Завдання 10
 Наведено список людей. Зроби можливість сортування списку на ім'я та на прізвище.
