@@ -3,7 +3,7 @@
 Натискання на кнопку "SHOW ME" має виводити значення з поля введення (дивіться на елементи в html-розмітці)
 */
 
-/* const refs = {
+const refs = {
   taskTitle: document.querySelector('.taskTitle'),
   btn: document.querySelector('#alertButton'),
   input: document.querySelector('#alertInput'),
@@ -11,17 +11,19 @@
 // const { taskTitle, btn, input } = refs;
 refs.btn.addEventListener('click', onShowMeBtnClick);
 function onShowMeBtnClick() {
-  refs.taskTitle.textContent = refs.input.value;
+  if (refs.input.value !== '') {
+    refs.taskTitle.textContent = refs.input.value;
+  }
 }
- */
-// _______________________________________________________________________________________________________________
+
+// Завдання 8_______________________________________________________________________________________________________________
 /*
-Завдання 8
+
 При натисканні на кожну з кнопок підсумовуються значення з data-атрибутів.
 За натисканням на кнопку "Вивести результат" виводиться сума значення, а також статистика з
 інформацією про те, яка кнопка була натиснута скільки разів.
 */
-/* const refs = {
+const references = {
   statList: document.querySelector('.statList'),
   resultButton: document.querySelector('#resultButton'),
   resultSection: document.querySelector('#resultSection'),
@@ -29,7 +31,7 @@ function onShowMeBtnClick() {
 
 let sum = 0;
 let clicksStat = {};
-refs.statList.addEventListener('click', onCalcBtnClick);
+references.statList.addEventListener('click', onCalcBtnClick);
 function onCalcBtnClick(event) {
   if (event.target.nodeName !== 'BUTTON') {
     return;
@@ -41,20 +43,19 @@ function onCalcBtnClick(event) {
   clicksStat[event.target.textContent] =
     (clicksStat[event.target.textContent] || 0) + 1;
 }
-refs.resultButton.addEventListener('click', onResultBtnClick);
+references.resultButton.addEventListener('click', onResultBtnClick);
 function onResultBtnClick() {
   console.log(sum);
   console.log(clicksStat);
-} */
+}
 
-// _______________________________________________________________________________________________________________
+// Завдання 9_______________________________________________________________________________________________________________
 
 /*
-Завдання 9
 Видалити зі списку елементи, які позначені.
 */
 
-/* const checkboxForm = document.querySelector('.checkboxForm');
+const checkboxForm = document.querySelector('.checkboxForm');
 const checkboxList = document.querySelector('.checkboxList');
 const checkboxContent = checkboxList.innerHTML;
 const resetBtn = document.querySelector('.resetBtn');
@@ -88,18 +89,16 @@ function handleOnFilterBtnClick(event) {
 }
 resetBtn.addEventListener('click', () => {
   checkboxList.innerHTML = checkboxContent;
-}); */
+});
 
-// _______________________________________________________________________________________________________________
+// Завдання 2_______________________________________________________________________________________________________________
 
 /*
-Завдання 2
 Після натискання кнопки "SWAP ME" здійснюється обмін вмістом між двома інпутами.
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
-
 */
 
-/* const swapBtn = document.querySelector('#swapButton');
+const swapBtn = document.querySelector('#swapButton');
 const leftInput = document.querySelector('#leftSwapInput');
 const rightInput = document.querySelector('#rightSwapInput');
 swapBtn.addEventListener('click', onSwapBtnClick);
@@ -108,12 +107,11 @@ function onSwapBtnClick() {
   const rightInputValue = rightInput.value;
   rightInput.value = leftInputValue;
   leftInput.value = rightInputValue;
-} */
+}
 
-// _______________________________________________________________________________________________________________
+// Завдання 10_______________________________________________________________________________________________________________
 
 /*
-Завдання 10
 Наведено список людей. Зроби можливість сортування списку на ім'я та на прізвище.
 */
 const sortByLastNameBtn = document.querySelector('#sortByLastNameButton');
